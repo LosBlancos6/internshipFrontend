@@ -1,0 +1,21 @@
+<form [formGroup]="validateForm">
+    <div class="form-group">
+        <div class="col-6 offset-3">
+            <span style="display:flex">
+                <label style="width: 30%;">User:</label>
+                <select class="browser-default custom-select" style="width: 100%;" formControlName="userId">
+                    <option *ngFor="let item of listOfUsers" [value]="item.id">{{item.name}}</option>
+                </select>
+            </span>
+            <span style="display:flex">
+                <label style="width: 30%;">Skill:</label>
+                <select class="browser-default custom-select" style="width: 100%;" formControlName="skillId">
+                    <option *ngFor="let item of listOfSkills" [value]="item.id">{{item.name}}</option>
+                </select>
+            </span>
+            <br>
+            <button (click)="assign()" class="btn btn-info form-control"
+                [disabled]="!validateForm.valid">Assign</button>
+        </div>
+    </div>
+</form>

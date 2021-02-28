@@ -1,0 +1,27 @@
+<form [formGroup]="validateForm">
+    <div class="form-group">
+        <div class="col-6 offset-3">
+            <input type="text" placeholder="name" class="form-control" placeholder="name" formControlName="name" />
+            <br />
+
+            <input type="text" placeholder="dateOfBirth" class="form-control" placeholder="dateOfBirth"
+                formControlName="dateOfBirth" /> <br />
+
+            <input type="text" placeholder="email" class="form-control" placeholder="email" formControlName="email" />
+            <br />
+            <span style="margin-left: 20%;"
+                *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors" class="text-danger">
+                Please input correct email</span>
+
+            <input type="text" placeholder="number" class="form-control" placeholder="number"
+                formControlName="number" />
+            <span style="margin-left: 20%;"
+                *ngIf="validateForm.get('number')?.dirty && validateForm.get('number')?.errors" class="text-danger">
+                Please input only numbers</span>
+            <br />
+
+            <button (click)="createUser()" class="btn btn-info form-control"
+                [disabled]="!validateForm.valid">Create</button>
+        </div>
+    </div>
+</form>

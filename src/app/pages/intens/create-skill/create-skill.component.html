@@ -1,0 +1,10 @@
+<form [formGroup]="validateForm">
+    <div class="form-group">
+        <div class="col-6 offset-3">
+            <input type="text" placeholder="name" class="form-control" placeholder="name" formControlName="name" />
+            <br />
+            <button (click)="createSkill()" class="btn btn-info form-control"
+                [disabled]="!validateForm.valid">Create</button>
+        </div>
+    </div>
+</form>
